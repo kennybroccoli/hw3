@@ -7,7 +7,8 @@
 <ul>
   <% @entries.each do |entry| %>
     <li>
-      <strong><%= entry.title %></strong> (<%= entry.occurred_on %>)<br>
+      <p><%= entry.occurred_on %></p>
+      <strong><%= entry.title %></strong><br>
       <%= entry.description %>
     </li>
   <% end %>
