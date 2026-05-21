@@ -1,2 +1,16 @@
-<h1>Entries#new</h1>
-<p>Find me in app/views/entries/new.html.erb</p>
+<h1>New Entry for <%= @place.name %></h1>
+
+<%= form_with(model: @entry, local: true) do |form| %>
+  <%= form.hidden_field :place_id, value: @place.id %>
+  
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+  
+  <%= form.label :occurred_on %>
+  <%= form.date_field :occurred_on %>
+  
+  <%= form.submit "Create entry" %>
+<% end %>
