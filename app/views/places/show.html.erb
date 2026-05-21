@@ -3,14 +3,12 @@
 <p><%= link_to "Back to places", places_path %></p>
 
 <h2>Entries</h2>
-<ul>
-  <% @entries.each do |entry| %>
-    <li>
-      <strong><%= entry.title %></strong><br>
-      <%= entry.description %><br>
-      <small><%= entry.occurred_on %></small>
-    </li>
-  <% end %>
-</ul>
+<% @entries.each do |entry| %>
+  <div>
+    <strong><%= entry.title %></strong><br>
+    <%= entry.description %><br>
+    <small><%= entry.occurred_on %></small>
+  </div>
+<% end %>
 
-<p><%= link_to "Add a new entry", new_entry_path(place_id: @place.id) %></p>
+<p><%= link_to "New Post", new_entry_path(place_id: @place.id) %></p>
