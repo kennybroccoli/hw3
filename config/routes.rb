@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :places, only: [:index, :show, :new, :create] do
-    resources :entries, only: [:new, :create]
-  end
+  get "entries/new"
+  get "entries/create"
+  get "places/index"
+  get "places/show"
+  get "places/new"
+  get "places/create"
+  resources :places
+  resources :entries
 
   root "places#index"
 end
